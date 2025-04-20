@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent by Bella</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Dark background */
+            color: #f4f4f4; /* Light text */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+      color: #ffffff;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      letter-spacing: 2px;        }
+
+        .catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: #1c1c1c; /* Dark grey for cards */
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #333;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #3e8db5; /* Dark blue for titles */
+        }
+
+        /* Button Styles */
+        .like-button {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background: #3e8db5; /* Dark blue */
+            color: #f4f4f4;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .like-button:hover {
+            background: #2b5f80; /* Slightly darker blue for hover */
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #1c1c1c;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #3e8db5;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent by Bella</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #7699d4;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto;
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            letter-spacing: 2px;
+        }
+
+        .catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: #333;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-bottom: 1px solid #333;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #7699d4;
+        }
+
+        .like-button {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background: #ffffff;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #333;
+            font-size: 16px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .like-button:hover {
+            background: #e0e0e0;
+            color: #000;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #5a7fb0;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="Rent by Bella Logo" class="logo" />
+    <h1>Rent by Bella</h1>
+    <div class="catalog">
+
+      <!-- Dress 1 -->
+            <div class="card">
+                <img src="IMG_2194.JPG" alt="Floral Ember Gown">
+                <h2>Christina Dress</h2>
+                <a 
+                    class="like-button" 
+                    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Christina%20Dress." 
+                    target="_blank">
+                    I Like This
+                </a>
+            </div>
+            <!-- Dress 2 -->
+            <div class="card">
+  <img src="5e481f0b-86d7-4f67-95b9-769a9357c8da.JPG" alt="Mariana Dress">
+  <h2>Mariana Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Mariana%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>           
+ <!-- Dress 3 -->
+            <div class="card">
+  <img src="07a2a3ff-828f-409c-9fe6-aafa2eb38053.JPG" alt="Sofia Dress">
+  <h2>Sofia Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Sofia%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+            <!-- Dress 4 -->
+            <div class="card">
+  <img src="29f2c132-0f97-40a5-918c-23df43bc53b6.JPG" alt="Camila Dress">
+  <h2>Camila Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Camila%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+            <!-- Valentina Dress -->
+<div class="card">
+  <img src="DSC02021.JPG" alt="Valentina Dress">
+  <h2>Valentina Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Valentina%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+
+<!-- Julieta Dress -->
+<div class="card">
+  <img src="f90c40fa-06c2-4f62-8451-2c7a3e6afba0.JPG" alt="Julieta Dress">
+  <h2>Julieta Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Julieta%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+
+<!-- Isadora Dress -->
+<div class="card">
+  <img src="97cc1d73-84a0-4cf9-8d6c-db53ed2d7464.JPG" alt="Isadora Dress">
+  <h2>Isadora Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Isadora%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+
+<!-- Renata Dress -->
+<div class="card">
+  <img src="a8eeaf53-8ea2-41ed-86ae-84d003c7cfa2.JPG" alt="Renata Dress">
+  <h2>Renata Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Renata%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+
+<!-- Emilia Dress -->
+<div class="card">
+  <img src="f10b98dc-95b7-4d9a-ac41-43c7a741eb9a.JPG" alt="Emilia Dress">
+  <h2>Emilia Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Emilia%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+            <!-- Dress 10 -->
+            <!-- Antonella Dress -->
+<div class="card">
+  <img src="IMG_2186.JPG" alt="Antonella Dress">
+  <h2>Antonella Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Antonella%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+
+<!-- Victoria Dress -->
+<div class="card">
+  <img src="DSC01897.JPG" alt="Victoria Dress">
+  <h2>Victoria Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Victoria%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+
+<!-- Aurora Dress -->
+<div class="card">
+  <img src="DSC01943.JPG" alt="Aurora Dress">
+  <h2>Aurora Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Aurora%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+
+<!-- Bianca Dress -->
+<div class="card">
+  <img src="DSC01967.JPG" alt="Bianca Dress">
+  <h2>Bianca Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Bianca%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+
+<!-- Natalia Dress -->
+<div class="card">
+  <img src="DSC02032.JPG" alt="Natalia Dress">
+  <h2>Natalia Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Natalia%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+
+<!-- Estela Dress -->
+<div class="card">
+  <img src="DSC01988.JPG" alt="Estela Dress">
+  <h2>Estela Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Estela%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+            <!-- Dress 21 -->
+<div class="card">
+  <img src="IMG_2177.JPG" alt="Amelia Dress">
+  <h2>Amelia Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Amelia%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+
+<!-- Dress 22 -->
+<div class="card">
+  <img src="IMG_2197.JPG" alt="Natalia Dress">
+  <h2>Natalia Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Natalia%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+
+<!-- Dress 23 -->
+<div class="card">
+  <img src="IMG_2199.JPG" alt="Bianca Dress">
+  <h2>Bianca Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Bianca%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+
+<!-- Dress 24 -->
+<div class="card">
+  <img src="IMG_2189.JPG" alt="Florencia Dress">
+  <h2>Florencia Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Florencia%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+
+<!-- Dress 25 -->
+<div class="card">
+  <img src="IMG_2132.JPG" alt="Renée Dress">
+  <h2>Renée Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Renée%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+
+<!-- Dress 26 -->
+<div class="card">
+  <img src="IMG_2179.JPG" alt="Catalina Dress">
+  <h2>Catalina Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Catalina%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+
+<!-- Dress 27 -->
+<div class="card">
+  <img src="DSC01913.JPG" alt="Paula Dress">
+  <h2>Paula Dress</h2>
+  <a 
+    class="like-button" 
+    href="https://wa.me/+50764092833?text=Hi!%20I'm%20interested%20in%20the%20Paula%20Dress%20from%20Rent%20by%20Bella." 
+    target="_blank">
+    I Like This
+  </a>
+</div>
+        </div>
+    </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Rent by Bella. All rights reserved. | <a href="#">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>
+
